@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Navbar Start */
+nav {
+    @apply bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10 z-50;
+}
+.nav-tittle {
+    @apply font-extrabold text-lg lg:text-4xl;
+}
+.nav-sub-tittle {
+    @apply text-[9px] lg:text-base pt-2 lg:pt-0;
+}
+.nav-tittle-flex-1{
+    @apply flex items-center lg:items-end;
+} 
+.nav-tittle-flex-2 {
+    @apply flex gap-3 lg:gap-6;
+}
+.nav-a {
+    filter: invert(100%);
+    @apply w-[25px] lg:w-[35px];
+}
+/* Navbar End */
