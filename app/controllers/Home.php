@@ -10,4 +10,11 @@ class Home extends Controller
         $this->view('home/index');
         $this->view('templates/footer');
     }
+
+    public function hal2()
+    {
+        $this->view('templates/header');
+        $this->view('home/hal2');
+        $this->view('templates/footer');
+    }
 }

@@ -22,4 +22,8 @@ nav {
     filter: invert(100%);
     @apply w-[25px] lg:w-[35px];
 }
+
+.nav-index {
+    @apply pt-32;
+}
 /* Navbar End */
