@@ -1,0 +1,1 @@
+<h1 class="nav-index hal2">ini halaman 2</h1>

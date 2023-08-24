@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?= BASEURL ?>/css/output.css">
 </head>
 
-<body>
+<body class="body">
     <nav>
         <div class="nav-tittle-flex-1">
             <h1 class="nav-tittle">FIGURE STORE</h1>

@@ -1,1 +1,1 @@
-<h1 class="nav-index">Hello World</h1>
+<h1 class="nav-index index font-bold text-purple-900">Hello Worlw</h1>
