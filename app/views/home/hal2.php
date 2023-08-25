@@ -1,1 +1,1 @@
-<h1 class="nav-index hal2">ini halaman 2</h1>
+<h1 class="nav-index hal2 text-4xl font-extrabold text-green-500">ini halaman 2</h1>
