@@ -16,10 +16,10 @@
         </div>
         <div class="nav-tittle-flex-2">
             <a href="./client/account.php">
-                <img src="./img/icon/user.png" class="nav-a">
+                <img src="<?= BASEURL ?>/img/icon/user.png" class="nav-a">
             </a>
             <a href="./client/info.php">
-                <img src="./img/icon/shop.png" class="nav-a">
+                <img src="<?= BASEURL ?>/img/icon/shop.png" class="nav-a">
             </a>
         </div>
     </nav>
