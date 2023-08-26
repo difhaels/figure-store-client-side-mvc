@@ -6,9 +6,14 @@ class Home extends Controller
     // default dari App
     public function index()
     {
-        $data['item'] = $this->model('Figure_model')->getAllItem(); // untuk default
+        $data['default'] = $this->model('Item')->getAllItem(); // untuk default
+
+        if (isset($_POST['search'])) { // menggunakan isset karena post seacrh belum terbaca diawal
+            $data['search'] = $this->model('Item')->searchItem($_POST['key']); // untuk fitur seacrh
+        }
+
         if (isset($_POST['sort'])) { // menggunakan isset karena post sort belum terbaca diawal
-            $data['sort'] = $this->model('Figure_model')->sortItem($_POST['sort']); // untuk fitur sort
+            $data['sort'] = $this->model('Item')->sortItem($_POST['sort']); // untuk fitur sort
         }
         $this->view('templates/header');
         $this->view('home/index', $data);

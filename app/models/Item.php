@@ -1,6 +1,6 @@
 <?php
 
-class Figure_model
+class Item
 {
     private $table = "item";
     private $db;
@@ -14,6 +14,13 @@ class Figure_model
     public function getAllItem()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->resultSet();
+    }
+
+    // method untuk search item 
+    public function searchItem($key)
+    {
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE item_name LIKE '%$key%' OR item_source LIKE '%$key%'");
         return $this->db->resultSet();
     }
 

@@ -3,7 +3,6 @@
     <form action="" method="post" class="flex gap-3">
         <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search" id="key">
         <button type="submit" name="search" class="button-blue" id="search">Search</button>
-        <img src="./img/icon/loader.gif" class="h-8 loader hidden">
     </form>
 
     <!-- Sort -->
@@ -30,7 +29,14 @@
 <div class="items" id="items">
 
     <?php // jika data sort diset maka akan menggunakan $data['sort'] jika tidak akan menggunakan $data['item'], keduanya dari controllers
-    isset($data['sort']) ? $items = $data['sort'] : $items = $data['item'] ?>
+    if (isset($_POST['search'])) {
+        $items = $data['search'];
+    } else if (isset($_POST['sort'])) {
+        $items = $data['sort'];
+    } else {
+        $items = $data['default'];
+    }
+    ?>
 
     <?php foreach ($items as $item) : ?>
         <div class="item">
