@@ -4,7 +4,7 @@
 
 /* Root Start */
 .body {
-    background-image: url(../img/bg.jpg);
+    /* background-image: url(../img/bg.jpg); */
     background-size: cover;
     background-position: 50% 25%;
     background-attachment: fixed;

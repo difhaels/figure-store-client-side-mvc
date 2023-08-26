@@ -7,14 +7,15 @@
     </form>
 
     <!-- Sort -->
-    <form id="sortForm" action="" method="get">
+    <form id="sortForm" action="" method="post">
         <label for="sort" class="text-white">Sort By</label>
         <select id="sort" name="sort" class="mx-2 px-3 py-1 ">
-            <option value="">Normal</option>
-            <option value="newest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'newest') echo 'selected'; ?>>Newest</option>
-            <option value="oldest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'oldest') echo 'selected'; ?>>Oldest</option>
-            <option value="highest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'highest') echo 'selected'; ?>>Highest Price</option>
-            <option value="lowest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'lowest') echo 'selected'; ?>>Lowest Price</option>
+            <option value="">Default</option>
+            <option value="newest" <?php if (isset($_POST['sort']) && $_POST['sort'] === 'newest') echo 'selected'; ?>>Newest</option>
+            <option value="oldest" <?php if (isset($_POST['sort']) && $_POST['sort'] === 'oldest') echo 'selected'; ?>>Oldest</option>
+            <option value="highest" <?php if (isset($_POST['sort']) && $_POST['sort'] === 'highest') echo 'selected'; ?>>Highest Price</option>
+            <option value="lowest" <?php if (isset($_POST['sort']) && $_POST['sort'] === 'lowest') echo 'selected'; ?>>Lowest Price</option>
+
         </select>
     </form>
     <script>
@@ -28,7 +29,10 @@
 </div>
 <div class="items" id="items">
 
-    <?php foreach ($data['item'] as $item) : ?>
+    <?php // jika data sort diset maka akan menggunakan $data['sort'] jika tidak akan menggunakan $data['item'], keduanya dari controllers
+    isset($data['sort']) ? $items = $data['sort'] : $items = $data['item'] ?>
+
+    <?php foreach ($items as $item) : ?>
         <div class="item">
             <a href="item/detail.php?item_id=<?= $item['item_id'] ?>">
                 <img src="<?= BASEURL ?>/img/item/<?= $item["item_image"] ?>" alt="<?= $item["item_name"] ?>" class="item-image">

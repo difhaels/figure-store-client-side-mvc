@@ -62,7 +62,7 @@ class Database
         $this->stmt->execute();
     }
 
-    // 
+    //  method untuk mengambil semua isi database yang berkaitan
     public function resultSet()
     {
         $this->execute();
