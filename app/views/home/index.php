@@ -40,12 +40,12 @@
 
     <?php foreach ($items as $item) : ?>
         <div class="item">
-            <a href="item/detail.php?item_id=<?= $item['item_id'] ?>">
+            <a href="detail/<?= $item['item_id'] ?>"> <!-- ini akan mengirim item_id dan diexplode nantinya-->
                 <img src="<?= BASEURL ?>/img/item/<?= $item["item_image"] ?>" alt="<?= $item["item_name"] ?>" class="item-image">
                 <h1 class="text-center py-2"><?= $item["item_name"] ?></h1>
             </a>
             <div class="px-5 flex justify-center items-center gap-5 mb-4">
-                <a href="item/detail.php?item_id=<?= $item['item_id'] ?>" class="button-red">
+                <a href="detail/index.php?item_id=<?= $item['item_id'] ?>" class="button-red">
                     <div class="text-center text-[13px]">
                         <h1>PRE-ORDER</h1>
                         <strong>Rp. <?= number_format($item['item_price'], 0, ',', '.'); ?></strong>

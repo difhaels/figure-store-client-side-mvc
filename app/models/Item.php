@@ -17,6 +17,13 @@ class Item
         return $this->db->resultSet();
     }
 
+    // method untuk menampilkan item yang dipilih 
+    public function getItem($id)
+    {
+        $this->db->query("SELECT * FROM $this->table WHERE item_id = $id");
+        return $this->db->single();
+    }
+
     // method untuk search item 
     public function searchItem($key)
     {

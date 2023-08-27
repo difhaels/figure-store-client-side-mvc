@@ -4,6 +4,7 @@ module.exports = {
             "../app/views/templates/header.php",
             "../app/views/home/index.php",
             "../app/views/home/hal2.php",
+            "../app/views/detail/index.php",
             "../app/views/templates/footer.php"],
   theme: {
     extend: {
