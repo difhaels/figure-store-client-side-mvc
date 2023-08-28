@@ -3,7 +3,7 @@
 class Detail extends Controller
 {
     // id 1 dijadikan default (sepertinya bukan cara terbaik)
-    public function index($id)
+    public function index($id = 1)
     {
         $data['nav'] = "back-button";
         $get = $_GET;
