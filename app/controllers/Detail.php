@@ -2,17 +2,21 @@
 
 class Detail extends Controller
 {
-    public function index()
+    // id 1 dijadikan default (sepertinya bukan cara terbaik)
+    public function index($id = 1)
     {
-        $data['get'] = $_GET;
-        $string = http_build_query($data['get']);
-        $data['url'] = explode('F', $string);
-        $data['url'] = end($data['url']);
 
-        if (isset($_GET['url'])) $data['item'] = $this->model('Item')->getItem($data['url']); // mengirim data['url] sebagai id item
+        $get = $_GET;
+        $string = http_build_query($get);
+        $url = explode('%2F', $string);
+        $lastUrl = end($url);
+
+        if ($lastUrl) {
+            $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
+        }
 
         $this->view('templates/header');
-        $this->view('detail/index', $data);
+        $this->view('detail/index', $data = $this->model('Item')->getItem($id));
         $this->view('templates/footer');
     }
 }
