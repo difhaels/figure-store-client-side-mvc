@@ -1,4 +1,9 @@
 <div class="bg-[#1B6B93] flex justify-center items-center h-screen nav-index">
+    <ul>
+        <?php foreach ($data['user'] as $name) : ?>
+            <li><?= $name['username'] ?></li>
+        <?php endforeach; ?>
+    </ul>
     <div class="bg-white w-[500px] rounded-xl shadow-2xl">
         <form action="" method="post">
             <ul class="p-5">

@@ -37,6 +37,8 @@
         <p class="footer-dibuat">Dibuat dengan 💖 oleh <a href="https://instagram.com/difhaels" target="_blank" class="footer-name">Agung Saputra</a></p>
     </div>
 </footer>
+<script src="<?= BASEURL; ?>/js/jquery.min.js"></script>
+<script src="<?= BASEURL; ?>/js/script.js"></script>
 </body>
 
 </html>

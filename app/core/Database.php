@@ -74,4 +74,10 @@ class Database
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // menghitung apakah ada perubahan pada database
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
 }
