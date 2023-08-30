@@ -21,10 +21,10 @@
             <?php endif; ?>
         </div>
         <div class="nav-tittle-flex-2">
-            <a href="<?= BASEURL ?>/logister">
+            <a href="<?= BASEURL ?>/login">
                 <img src="<?= BASEURL ?>/img/icon/user.png" class="nav-a">
             </a>
-            <a href="./client/info.php">
+            <a href="<?= BASEURL ?>">
                 <img src="<?= BASEURL ?>/img/icon/shop.png" class="nav-a">
             </a>
         </div>
