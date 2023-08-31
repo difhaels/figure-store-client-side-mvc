@@ -1,6 +1,6 @@
 <div class="bg-[#1B6B93] flex justify-center items-center h-screen nav-index">
     <div class="bg-white w-[500px] rounded-xl shadow-2xl">
-        <form action="" method="post">
+        <form action="<?= BASEURL ?>/logister/register" method="post">
             <ul class="p-5">
                 <li class="py-1">
                     <input type="text" name="username" placeholder="Username" class="w-full h-10 border-2 border-black rounded-lg px-3">
@@ -23,9 +23,9 @@
                 <li class="py-1">
                     <input type="text" name="email" placeholder="Email" class="w-full h-10 border-2 border-black rounded-lg px-3">
                 </li>
-                <li class="py-1">Already have account <a href="./login.php" class="text-red-500">login</a></li>
+                <li class="py-1">Already have account? <a href="<?= BASEURL ?>/logister" class="text-red-500">login</a></li>
                 <li class="py-1">
-                    <button type="submit" name="register" class="button-yellow">Register</button>
+                    <button type="submit" class="button-yellow">Register</button>
                 </li>
             </ul>
         </form>

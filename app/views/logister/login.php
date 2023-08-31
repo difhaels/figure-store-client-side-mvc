@@ -13,7 +13,7 @@
                         <input type="checkbox" name="remember" id="remember">
                         <label for="remember">Remember me</label>
                     </div>
-                    <a href="<?= BASEURL ?>/logister/register" class="text-red-500">register</a>
+                    <a href="<?= BASEURL ?>/logister/regis" class="text-red-500">register</a>
                 </li>
                 <li class="py-1">
                     <button type="submit" class="button-yellow">Login</button>

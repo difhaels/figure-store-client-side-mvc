@@ -23,6 +23,7 @@ class Logister extends Controller
         $this->view('logister/user');
     }
 
+    // method untuk menghandle login
     public function login()
     {
         // mengecek password benar atau salah, jika benar akan mengembalikan nilai
@@ -43,6 +44,7 @@ class Logister extends Controller
         echo "username atau password salah";
     }
 
+    // method untuk logout
     public function logout()
     {
         $_SESSION = [];
@@ -52,10 +54,19 @@ class Logister extends Controller
         header("Location: " . BASEURL . "/logister");
     }
 
-    public function register()
+
+    // ini untuk tampilan register
+    public function regis()
     {
         $data['nav'] = "back-button";
         $this->view('templates/header', $data);
         $this->view("logister/register");
+    }
+
+    // method untuk menghandle register
+    public function register()
+    {
+        $this->model('Client')->register($_POST);
+        header("Location: " . BASEURL . "/logister");
     }
 }
