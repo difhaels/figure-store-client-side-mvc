@@ -15,7 +15,7 @@ class Detail extends Controller
             $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
         }
 
-        $data['item'] = $this->model('Item')->getItem($id);
+        $data['item'] = $this->model('Item_model')->getItem($id);
 
         $this->view('templates/header', $data);
         $this->view('detail/index', $data);

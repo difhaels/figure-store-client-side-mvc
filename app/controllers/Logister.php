@@ -28,7 +28,7 @@ class Logister extends Controller
     public function login()
     {
         // mengecek password benar atau salah, jika benar akan mengembalikan nilai
-        $data['client'] = $this->model('Client')->login($_POST);
+        $data['client'] = $this->model('Client_model')->login($_POST);
 
         if ($data['client']) {
             $_SESSION["login"] = true;
@@ -67,7 +67,7 @@ class Logister extends Controller
     // method untuk menghandle register
     public function register()
     {
-        $this->model('Client')->register($_POST);
+        $this->model('Client_model')->register($_POST);
         header("Location: " . BASEURL . "/logister");
     }
 }

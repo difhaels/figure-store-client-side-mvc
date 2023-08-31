@@ -1,6 +1,6 @@
 <?php
 
-class Item
+class Item_model
 {
     private $table = "item";
     private $db;

@@ -1,7 +1,7 @@
 <div class="navigate">
     <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $data['item']['item_name'] ?>#<?= $data['item']['item_code'] ?></span></h1>
 </div>
-<div class="flex flex-wrap justify-center px-5">
+<div class="flex flex-wrap justify-center px-5 pb-16">
     <div class="px-10">
         <img src="<?= BASEURL ?>/img/item/<?= $data['item']['item_image'] ?>" alt="<?= $data['item']['item_code'] ?>" class="detail-image mx-auto">
         <div class="flex justify-center gap-2 mt-2">

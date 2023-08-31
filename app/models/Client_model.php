@@ -1,6 +1,6 @@
 <?php
 
-class Client
+class Client_model
 {
     private $table = "client";
     private $db;

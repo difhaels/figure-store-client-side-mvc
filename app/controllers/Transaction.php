@@ -41,7 +41,7 @@ class Transaction extends Controller
     public function process()
     {
         if ($this->model('Transaction_model')->transaction($_POST) > 0) {
-            header("Location: " . BASEURL . "/logister");
+            header("Location: " . BASEURL . "/transaction/info");
         } else {
             header("Location: " . BASEURL);
         }
