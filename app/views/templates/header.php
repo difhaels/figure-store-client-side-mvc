@@ -21,7 +21,7 @@
             <?php endif; ?>
         </div>
         <div class="nav-tittle-flex-2">
-            <a href="<?= BASEURL ?>/login">
+            <a href="<?= BASEURL ?>/logister">
                 <img src="<?= BASEURL ?>/img/icon/user.png" class="nav-a">
             </a>
             <a href="<?= BASEURL ?>">

@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller
+class Logister extends Controller
 {
 
     public function index()
@@ -31,8 +31,17 @@ class Login extends Controller
             $_SESSION["address"] = $data['client']["address"];
             $_SESSION["email"] = $data['client']["email"];
 
-            // pindah ke halaman index
-            header("Location: " . BASEURL . "/login");
+            // pindah ke halaman user
+            header("Location: " . BASEURL . "/logister");
         }
+    }
+
+    public function logout()
+    {
+        $_SESSION = [];
+        session_unset();
+        session_destroy();
+        // pindah ke halaman login
+        header("Location: " . BASEURL . "/logister");
     }
 }

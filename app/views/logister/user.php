@@ -6,6 +6,6 @@
     <h1>Email : <?= $_SESSION["email"] ?></h1>
     <div class="mt-5">
         <a class="button-yellow">Edit</a>
-        <a href="logout.php" class="button-red">Logout</a>
+        <a href="<?= BASEURL ?>/logister/logout" class="button-red">Logout</a>
     </div>
 </div>
