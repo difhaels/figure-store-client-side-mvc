@@ -18,7 +18,7 @@
         <h1 class="text-xl"><?= $data['item']['item_source'] ?> - <?= $data['item']['item_name'] ?> - <?= $data['item']['item_type'] ?> #<?= $data['item']['item_code'] ?></h1>
 
         <!-- Form untuk mengirim data item ke transaction -->
-        <form action="../client/transaction.php" method="post">
+        <form action="<?= BASEURL ?>/transaction" method="post">
             <input type="hidden" name="item_id" value="<?= $data['item']['item_id'] ?>">
             <input type="hidden" name="item_name" value="<?= $data['item']['item_name'] ?>">
             <input type="hidden" name="item_source" value="<?= $data['item']['item_source'] ?>">

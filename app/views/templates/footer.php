@@ -1,4 +1,4 @@
-<footer class="footer-parent mt-10">
+<footer class="footer-parent">
     <div class="mx-auto">
         <div class="footer-flex">
             <div class="footer-left">

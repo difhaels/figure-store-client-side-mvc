@@ -11,6 +11,8 @@ module.exports = {
             "../app/views/logister/login.php",
             "../app/views/logister/register.php",
             
+            "../app/views/transaction/index.php",
+
             "../app/views/templates/footer.php"],
   theme: {
     extend: {
