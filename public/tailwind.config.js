@@ -12,6 +12,7 @@ module.exports = {
             "../app/views/logister/register.php",
             
             "../app/views/transaction/index.php",
+            "../app/views/transaction/info.php",
 
             "../app/views/templates/footer.php"],
   theme: {

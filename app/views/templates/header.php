@@ -24,7 +24,7 @@
             <a href="<?= BASEURL ?>/logister">
                 <img src="<?= BASEURL ?>/img/icon/user.png" class="nav-a">
             </a>
-            <a href="<?= BASEURL ?>">
+            <a href="<?= BASEURL ?>/transaction/info">
                 <img src="<?= BASEURL ?>/img/icon/shop.png" class="nav-a">
             </a>
         </div>
