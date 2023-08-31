@@ -6,6 +6,8 @@ class Detail extends Controller
     public function index($id = 1)
     {
         $data['nav'] = "back-button";
+        $data['nav-short'] = "yes";
+
         $get = $_GET;
         $string = http_build_query($get);
         $url = explode('%2F', $string);

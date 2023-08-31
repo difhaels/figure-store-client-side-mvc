@@ -7,6 +7,8 @@ class Logister extends Controller
     {
         // data untuk settingan navbar 
         $data['nav'] = "back-button";
+        $data['nav-short'] = "yes";
+
         $this->view('templates/header', $data);
 
         if (isset($_SESSION["login"])) {
@@ -60,6 +62,8 @@ class Logister extends Controller
     public function regis()
     {
         $data['nav'] = "back-button";
+        $data['nav-short'] = "yes";
+
         $this->view('templates/header', $data);
         $this->view("logister/register");
     }

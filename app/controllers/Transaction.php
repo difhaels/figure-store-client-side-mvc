@@ -7,6 +7,8 @@ class Transaction extends Controller
         // cek udah login apa belum
         if (isset($_SESSION['login'])) {
             $data['nav'] = "back-button";
+            $data['nav-short'] = "yes";
+
             $this->view('templates/header', $data);
             // jika sudah login, tampilkan menu transaction
             $this->view('transaction/index');
@@ -23,6 +25,7 @@ class Transaction extends Controller
         // cek udah login apa belum
         if (isset($_SESSION['login'])) {
             $data['nav'] = "back-button";
+            $data['nav-short'] = "yes";
 
             // jika sudah login jalankan getAllInfo untuk menangkap semua proses transaksi
             $data['informations'] = $this->model('Transaction_model')->getAllInfo();

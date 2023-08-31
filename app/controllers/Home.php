@@ -7,6 +7,8 @@ class Home extends Controller
     public function index()
     {
         $data['nav'] = "default";
+        $data['nav-short'] = "yes";
+
         $data['default'] = $this->model('Item_model')->getAllItem(); // untuk default
 
         if (isset($_POST['search'])) { // menggunakan isset karena post seacrh belum terbaca diawal
