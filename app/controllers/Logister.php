@@ -11,11 +11,16 @@ class Logister extends Controller
 
         if (isset($_SESSION["login"])) {
             // jika sudah login akan menampilkan data user
-            $this->view('logister/user');
+            $this->user();
         } else {
             // jika belum login, user akan diarahkan ke tampilan login
             $this->view('logister/login');
         }
+    }
+
+    public function user()
+    {
+        $this->view('logister/user');
     }
 
     public function login()
@@ -33,7 +38,9 @@ class Logister extends Controller
 
             // pindah ke halaman user
             header("Location: " . BASEURL . "/logister");
+            die;
         }
+        echo "username atau password salah";
     }
 
     public function logout()
@@ -43,5 +50,12 @@ class Logister extends Controller
         session_destroy();
         // pindah ke halaman login
         header("Location: " . BASEURL . "/logister");
+    }
+
+    public function register()
+    {
+        $data['nav'] = "back-button";
+        $this->view('templates/header', $data);
+        $this->view("logister/register");
     }
 }

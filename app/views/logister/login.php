@@ -1,6 +1,6 @@
 <div class="bg-[#1B6B93] flex justify-center items-center h-screen nav-index">
     <div class="bg-white w-[500px] rounded-xl shadow-2xl">
-        <form action="<?= BASEURL ?>/login/login" method="post">
+        <form action="<?= BASEURL ?>/logister/login" method="post">
             <ul class="p-5">
                 <li class="py-1">
                     <input type="text" name="username" placeholder="Username" class="w-full h-10 border-2 border-black rounded-lg px-3">
