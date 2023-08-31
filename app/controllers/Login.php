@@ -11,10 +11,10 @@ class Login extends Controller
 
         if (isset($_SESSION["login"])) {
             // jika sudah login akan menampilkan data user
-            $this->view('login/user');
+            $this->view('logister/user');
         } else {
             // jika belum login, user akan diarahkan ke tampilan login
-            $this->view('login/login');
+            $this->view('logister/login');
         }
     }
 
@@ -32,7 +32,7 @@ class Login extends Controller
             $_SESSION["email"] = $data['client']["email"];
 
             // pindah ke halaman index
-            header("Location: " . BASEURL);
+            header("Location: " . BASEURL . "/login");
         }
     }
 }

@@ -8,7 +8,7 @@ module.exports = {
             "../app/views/detail/index.php",
 
             "../app/views/logister/login.php",
-            "../app/views/logister/register.php",
+            "../app/views/logister/user.php",
             
             "../app/views/templates/footer.php"],
   theme: {
