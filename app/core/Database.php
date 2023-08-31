@@ -62,6 +62,7 @@ class Database
         $this->stmt->execute();
     }
 
+    //  method untuk mengambil satu isi database yang berkaitan
     public function single()
     {
         $this->execute();
