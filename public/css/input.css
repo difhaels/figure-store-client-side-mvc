@@ -56,7 +56,7 @@ nav {
     @apply px-1 py-1 border-2 focus:outline-none;
   }
   .items {
-    @apply flex flex-wrap gap-3 justify-center;
+    @apply flex flex-wrap gap-3 justify-center pb-16;
   }
   .item {
     @apply bg-white w-44 lg:w-56 shadow-xl rounded-sm;

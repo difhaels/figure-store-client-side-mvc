@@ -16,6 +16,7 @@ class Logister extends Controller
             // jika belum login, user akan diarahkan ke tampilan login
             $this->view('logister/login');
         }
+        $this->view('templates/footer');
     }
 
     public function user()

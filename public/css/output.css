@@ -813,6 +813,10 @@ video {
   padding-bottom: 6rem;
 }
 
+.pb-32 {
+  padding-bottom: 8rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1074,6 +1078,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
+  padding-bottom: 4rem;
 }
 
 .item {

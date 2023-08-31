@@ -1,4 +1,4 @@
-<div class="pt-16 lg:pt-24 px-10 nav-index">
+<div class="pt-16 pb-32 lg:pt-24 px-10 nav-index">
     <h1>Username : <?= $_SESSION["username"] ?></h1>
     <h1>No Telepon : <?= $_SESSION["notlp"] ?></h1>
     <h1>No Whatsapp: <?= $_SESSION["nowa"] ?></h1>
