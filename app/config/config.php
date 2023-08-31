@@ -1,5 +1,5 @@
 <?php
-define('BASEURL', 'http://localhost/anime/client-mvc/public');
+define('BASEURL', 'http://localhost/anime/figure-store-mvc/public');
 
 // DB
 define('DB_HOST', 'localhost');

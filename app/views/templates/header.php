@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figure Store ~ Client Side</title>
+    <title>Figure Store</title>
     <link rel="stylesheet" href="<?= BASEURL ?>/css/output.css">
 </head>
 
@@ -17,7 +17,6 @@
                 </a>
             <?php else : ?>
                 <h1 class="nav-tittle">FIGURE STORE</h1>
-                <h1 class="nav-sub-tittle">.client side</h1>
             <?php endif; ?>
         </div>
         <div class="nav-tittle-flex-2">
