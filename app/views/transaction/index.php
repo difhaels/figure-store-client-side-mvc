@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <form action="" method="post" enctype="multipart/form-data" class="px-10">
+        <form action="transaction/process" method="post" enctype="multipart/form-data" class="px-10">
             <input type="hidden" name="username" value="<?= $_SESSION["username"] ?>">
             <input type="hidden" name="notlp" value="<?= $_SESSION["notlp"] ?>">
             <input type="hidden" name="address" value="<?= $_SESSION["address"] ?>">
@@ -69,7 +69,7 @@
             </div>
             <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                 <h1 class="text-slate-600">Alamat</h1>
-                <input type="text" placeholder="<?= $_SESSION["address"] ?>" name="transaction_alamat" class="w-full focus:outline-none">
+                <input type="text" placeholder="<?= $_SESSION["address"] ?>" name="transaction_address" class="w-full focus:outline-none">
             </div>
             <div class="py-3">
                 <div class="p-1 border border-slate-600">
@@ -80,7 +80,7 @@
                 <label for="transaction_info">Upload proof of payment</label>
                 <input type="file" name="transaction_info" id="transaction_info" required class="py-3">
             </div>
-            <button type="submit" name="send" class="button-green">Send</button>
+            <button type="submit" class="button-green">Send</button>
         </form>
 
     </div>

@@ -8,10 +8,11 @@ class Transaction extends Controller
         if (isset($_SESSION['login'])) {
             $data['nav'] = "back-button";
             $this->view('templates/header', $data);
+            // jika sudah login, tampilkan menu transaction
             $this->view('transaction/index');
             $this->view('templates/footer');
         } else {
-            // pindah ke halaman user
+            // pindah ke halaman user jika belum login
             header("Location: " . BASEURL . "/logister");
             die;
         }
@@ -23,19 +24,26 @@ class Transaction extends Controller
         if (isset($_SESSION['login'])) {
             $data['nav'] = "back-button";
 
+            // jika sudah login jalankan getAllInfo untuk menangkap semua proses transaksi
             $data['informations'] = $this->model('Transaction_model')->getAllInfo();
             $this->view('templates/header', $data);
-            $this->view('transaction/info', $data);
+
+            $this->view('transaction/info', $data);  // hasil getAllInfo akan ditampilkan di sini 
             $this->view('templates/footer');
         } else {
-            // pindah ke halaman user
+            // pindah ke halaman user jika belum login
             header("Location: " . BASEURL . "/logister");
             die;
         }
     }
+
     // method untuk handle transaction
-    public function transaction()
+    public function process()
     {
-        $this->view('templates/x');
+        if ($this->model('Transaction_model')->transaction($_POST) > 0) {
+            header("Location: " . BASEURL . "/logister");
+        } else {
+            header("Location: " . BASEURL);
+        }
     }
 }
