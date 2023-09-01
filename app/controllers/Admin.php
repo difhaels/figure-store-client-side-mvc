@@ -7,6 +7,7 @@ class Admin extends Controller
         $data['nav'] = "back-button";
         $data['nav-short'] = "no";
         $this->view('templates/header', $data);
+        $this->view('admin/index');
         $this->view('templates/footer');
     }
 }

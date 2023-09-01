@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.php",
-            "../app/views/templates/header.php",
 
+            "../app/views/templates/header.php",
+            "../app/views/templates/footer.php",
+            
             "../app/views/home/index.php",
+
+            "../app/views/admin/index.php",
 
             "../app/views/detail/index.php",
 
@@ -12,9 +16,8 @@ module.exports = {
             "../app/views/logister/register.php",
             
             "../app/views/transaction/index.php",
-            "../app/views/transaction/info.php",
-
-            "../app/views/templates/footer.php"],
+            "../app/views/transaction/info.php"
+          ],
   theme: {
     extend: {
       colors: {

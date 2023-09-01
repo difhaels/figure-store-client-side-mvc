@@ -21,6 +21,9 @@
         </div>
         <div class="nav-tittle-flex-2">
             <?php if ($data['nav-short'] == "yes") : ?>
+                <a href="<?= BASEURL ?>/admin">
+                    <img src="<?= BASEURL ?>/img/icon/admin.png" class="nav-a">
+                </a>
                 <a href="<?= BASEURL ?>/logister">
                     <img src="<?= BASEURL ?>/img/icon/user.png" class="nav-a">
                 </a>
