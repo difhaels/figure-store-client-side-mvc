@@ -3,7 +3,7 @@
 
     <div class="flex justify-between items-center flex-wrap gap-3 pt-3 py-16">
 
-        <a href="<?= BASEURL ?>/admin/setting" class="w-full lg:w-80 bg-slate-200 cursor-pointer">
+        <a href="<?= BASEURL ?>/admin" class="w-full lg:w-80 bg-slate-200 cursor-pointer">
             <div class="bg-red-500 pt-20 px-1 lg:px-3 pb-1 lg:pb-3">
                 <img src="<?= BASEURL ?>/img/icon/admin-a.png" alt="admin" class="w-10">
             </div>

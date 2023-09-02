@@ -1,6 +1,6 @@
 <div class="bg-[#1B6B93] flex justify-center items-center h-screen nav-index">
     <div class="bg-white w-[500px] rounded-xl shadow-2xl">
-        <form action="<?= BASEURL ?>/admin/login" method="post">
+        <form action="<?= BASEURL ?>/setting/login" method="post">
             <ul class="p-5">
                 <li>Login Admin</li>
                 <li class="py-1">
