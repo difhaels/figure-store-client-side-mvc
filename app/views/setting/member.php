@@ -1,16 +1,17 @@
 <?php
-$members = $data['member'];
+if (isset($_POST['search'])) {
+    $members = $data['search'];
+} else {
+    $members = $data['member'];
+}
 $no = 1;
 ?>
 <div class="px-3 lg:px-16 pt-16 lg:pt-32 pb-4">
-    <!-- tambah -->
-    <div class="mb-3">
-        <form action="<?= BASEURL ?>/member/settingAdd" method="post">
-            <input type="text" placeholder="username" name="username" class="border p-1">
-            <input type="text" placeholder="member" name="password" class="border p-1">
-            <button type="submit" class="button-green">Add member</button>
-        </form>
-    </div>
+    <!-- Search -->
+    <form action="" method="post" class="flex gap-3">
+        <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search" id="key">
+        <button type="submit" name="search" class="button-blue" id="search">Search</button>
+    </form>
 </div>
 
 <div class="px-3 lg:px-16 pb-10">
@@ -39,8 +40,8 @@ $no = 1;
                     <td class="border border-slate-600 p-1"><?= $member['email'] ?></td class="border border-slate-600 p-1">
                     <td class="border border-slate-600 p-1">
                         <div class="flex gap-1">
-                            <a class="button-yellow" href="<?= BASEURL ?>/member/settingUpdatePage/<?= $member['id'] ?>">update</a>
-                            <a class="button-red" href="<?= BASEURL ?>/member/settingDelete/<?= $member['id'] ?>">delete</a>
+                            <a class="button-yellow" href="<?= BASEURL ?>/member/updatePage/<?= $member['id'] ?>">update</a>
+                            <a class="button-red" href="<?= BASEURL ?>/member/delete/<?= $member['id'] ?>">delete</a>
                         </div>
                     </td>
                     <?php $no++ ?>

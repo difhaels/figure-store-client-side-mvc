@@ -17,6 +17,13 @@ class Client_model
         return $this->db->resultSet();
     }
 
+    // method untuk menampilkan member yang dipilih 
+    public function getMember($id)
+    {
+        $this->db->query("SELECT * FROM $this->table WHERE id = $id");
+        return $this->db->single();
+    }
+
     public function login()
     {
         // ambil username n password dari inputan user
@@ -72,6 +79,41 @@ class Client_model
         $this->db->bind('address', $address);
         $this->db->bind('email', $email);
 
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    // method untuk search member/client 
+    public function search($key)
+    {
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE username LIKE '%$key%'");
+        return $this->db->resultSet();
+    }
+
+    // hapus member
+    public function delete($id)
+    {
+        $query = "DELETE FROM " . $this->table . " WHERE id = $id";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    // update member
+    public function update($data)
+    {
+        $id = $data["id"];
+        $username = htmlspecialchars($data["username"]);
+        $password = htmlspecialchars($data["password"]);
+        $notlp = htmlspecialchars($data["notlp"]);
+        $nowa = htmlspecialchars($data["nowa"]);
+        $address = htmlspecialchars($data["address"]);
+        $email = htmlspecialchars($data["email"]);
+
+        $query = "UPDATE " . $this->table . " SET username = '$username', password = '$password', notlp = '$notlp', nowa = '$nowa', address = '$address', email = '$email' WHERE id = '$id'";
+        $this->db->query($query);
         $this->db->execute();
 
         return $this->db->rowCount();

@@ -17,7 +17,7 @@
             <h1 class="p-1 lg:p-3">Item</h1>
         </a>
 
-        <a href="<?= BASEURL ?>/admin/member" class="w-full lg:w-80 bg-slate-200 cursor-pointer">
+        <a href="<?= BASEURL ?>/member" class="w-full lg:w-80 bg-slate-200 cursor-pointer">
             <div class="bg-green-500 pt-20 px-1 lg:px-3 pb-1 lg:pb-3">
                 <img src="<?= BASEURL ?>/img/icon/member-a.png" alt="member" class="w-10">
             </div>

@@ -84,17 +84,6 @@ class Setting extends Controller
         var_dump($coba);
     }
 
-    // method untuk member
-    public function member()
-    {
-        $data['nav'] = "back-button";
-        $data['nav-short'] = "no";
-
-        $data['member'] = $this->model('Client_model')->getAllItem();
-        $this->view('templates/header', $data);
-        $this->view('admin/member', $data);
-        $this->view('templates/footer');
-    }
     // method untuk transaction
     public function transaction()
     {
