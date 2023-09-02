@@ -64,6 +64,27 @@ class Admin extends Controller
         }
     }
 
+    // method untuk hapus admin
+    public function settingDelete()
+    {
+        $get = $_GET;
+        $string = http_build_query($get);
+        $url = explode('%2F', $string);
+        $lastUrl = end($url);
+
+        if ($lastUrl) {
+            $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
+        }
+
+        if ($this->model('Admin_model')->deleteAdmin($id) > 0) {
+            // pindah ke dashboard admin setting
+            header("Location: " . BASEURL . "/admin/setting");
+            die;
+        } else {
+            echo "gagal delete";
+        }
+    }
+
 
     // method untuk item
     public function item()

@@ -43,4 +43,14 @@ class Admin_model
 
         return $this->db->rowCount();
     }
+
+    // hapus admin
+    public function deleteAdmin($id)
+    {
+        $query = "DELETE FROM " . $this->table . " WHERE id = $id";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
