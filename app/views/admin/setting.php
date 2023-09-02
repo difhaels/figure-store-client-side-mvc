@@ -37,7 +37,7 @@ $no = 1;
                     <td class="border border-slate-600 p-1"><?= $admin['password'] ?></td class="border border-slate-600 p-1">
                     <td class="border border-slate-600 p-1">
                         <div class="flex gap-1">
-                            <a class="button-yellow" href="<?= BASEURL ?>/admin/settingUpdate/<?= $admin['id'] ?>">update</a>
+                            <a class="button-yellow" href="<?= BASEURL ?>/admin/settingUpdatePage/<?= $admin['id'] ?>">update</a>
                             <a class="button-red" href="<?= BASEURL ?>/admin/settingDelete/<?= $admin['id'] ?>">delete</a>
                         </div>
                     </td>

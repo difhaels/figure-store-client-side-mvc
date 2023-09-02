@@ -85,6 +85,28 @@ class Admin extends Controller
         }
     }
 
+    // method untuk update admin tampilan
+    public function settingUpdatePage()
+    {
+        $get = $_GET;
+        $string = http_build_query($get);
+        $url = explode('%2F', $string);
+        $lastUrl = end($url);
+
+        if ($lastUrl) {
+            $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
+        }
+
+        $data['nav'] = "back-button";
+        $data['nav-short'] = "no";
+
+        $data['admin'] = $this->model('Admin_model')->getAdmin($id);
+
+        $this->view('templates/header', $data);
+        $this->view('admin/setting/update', $data);
+        $this->view('templates/footer');
+    }
+
 
     // method untuk item
     public function item()

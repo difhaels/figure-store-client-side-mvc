@@ -53,4 +53,19 @@ class Admin_model
 
         return $this->db->rowCount();
     }
+
+
+    // method untuk menampilkan admin yang dipilih 
+    public function getAdmin($id)
+    {
+        $this->db->query("SELECT * FROM $this->table WHERE id = $id");
+        return $this->db->single();
+    }
+    // update admin
+    public function updateAdmin($data)
+    {
+        $id = $data["id"];
+        $username = htmlspecialchars($data["username"]);
+        $password = htmlspecialchars($data["password"]);
+    }
 }
