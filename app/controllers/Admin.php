@@ -47,8 +47,26 @@ class Admin extends Controller
     // method untuk item
     public function item()
     {
-        echo "item";
+        $data['nav'] = "back-button";
+        $data['nav-short'] = "yes";
+
+        $data['items'] = $this->model('Item_model')->getAllItem();
+        $this->view('templates/header', $data);
+        $this->view('admin/item', $data);
     }
+
+    public function itemUpdate()
+    {
+        $coba = $_GET;
+        var_dump($coba);
+    }
+
+    public function itemDelete()
+    {
+        $coba = $_GET;
+        var_dump($coba);
+    }
+
     // method untuk member
     public function member()
     {

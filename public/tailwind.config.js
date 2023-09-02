@@ -8,6 +8,10 @@ module.exports = {
             "../app/views/home/index.php",
 
             "../app/views/admin/index.php",
+            "../app/views/admin/setting.php",
+            "../app/views/admin/item.php",
+            "../app/views/admin/member.php",
+            "../app/views/admin/transaction.php",
 
             "../app/views/detail/index.php",
 
