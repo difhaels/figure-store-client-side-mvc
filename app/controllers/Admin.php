@@ -170,7 +170,13 @@ class Admin extends Controller
     // method untuk member
     public function member()
     {
-        echo "member";
+        $data['nav'] = "back-button";
+        $data['nav-short'] = "no";
+
+        $data['member'] = $this->model('Client_model')->getAllItem();
+        $this->view('templates/header', $data);
+        $this->view('admin/member', $data);
+        $this->view('templates/footer');
     }
     // method untuk transaction
     public function transaction()
