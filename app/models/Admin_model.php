@@ -22,7 +22,7 @@ class Admin_model
         return $this->db->single();
     }
 
-    // ambil semua item di database
+    // ambil semua admin di database
     public function getAllAdmin()
     {
         $query = 'SELECT * FROM ' . $this->table;
@@ -54,7 +54,6 @@ class Admin_model
         return $this->db->rowCount();
     }
 
-
     // method untuk menampilkan admin yang dipilih 
     public function getAdmin($id)
     {
@@ -67,5 +66,11 @@ class Admin_model
         $id = $data["id"];
         $username = htmlspecialchars($data["username"]);
         $password = htmlspecialchars($data["password"]);
+
+        $query = "UPDATE " . $this->table . " SET username = '$username', password = '$password' WHERE id = '$id'";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
     }
 }

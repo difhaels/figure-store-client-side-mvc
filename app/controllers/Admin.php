@@ -107,6 +107,21 @@ class Admin extends Controller
         $this->view('templates/footer');
     }
 
+    public function settingUpdate()
+    {
+        $data['id'] = $_POST['id'];
+        $data['username'] = $_POST['username'];
+        $data['password'] = $_POST['password'];
+
+        if ($this->model('Admin_model')->updateAdmin($data) > 0) {
+            // pindah ke dashboard admin setting
+            header("Location: " . BASEURL . "/admin/setting");
+            die;
+        } else {
+            echo "gagal update";
+        }
+    }
+
 
     // method untuk item
     public function item()

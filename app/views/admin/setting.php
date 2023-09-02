@@ -11,12 +11,6 @@ $no = 1;
             <button type="submit" class="button-green">Add admin</button>
         </form>
     </div>
-    <!-- Search -->
-    <form action="" method="post" class="flex gap-3">
-        <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search" id="key">
-        <button type="submit" name="search" class="button-blue" id="search">Search</button>
-    </form>
-
 </div>
 
 <div class="px-3 lg:px-16 pb-10">
