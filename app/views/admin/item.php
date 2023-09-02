@@ -29,7 +29,13 @@
     </div>
 
     <?php
-    $items = $data['items'];
+    if (isset($_POST['search'])) {
+        $items = $data['search'];
+    } else if (isset($_POST['sort'])) {
+        $items = $data['sort'];
+    } else {
+        $items = $data['items'];
+    }
     $no = 1;
     ?>
 
