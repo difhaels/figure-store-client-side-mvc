@@ -52,6 +52,18 @@ class Admin extends Controller
         $this->view('templates/footer');
     }
 
+    // method untuk tambah admin
+    public function settingAdd()
+    {
+        if ($this->model('Admin_model')->addAdmin($_POST) > 0) {
+            // pindah ke dashboard admin setting
+            header("Location: " . BASEURL . "/admin/setting");
+            die;
+        } else {
+            echo "gagal menambahkan";
+        }
+    }
+
 
     // method untuk item
     public function item()

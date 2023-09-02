@@ -29,4 +29,18 @@ class Admin_model
         $this->db->query($query);
         return $this->db->resultSet();
     }
+
+    // tambah admin baru
+    public function addAdmin()
+    {
+        // ambil username n password dari inputan user
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $query = "INSERT INTO " . $this->table . " (username, password) VALUES ('$username', '$password')";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
