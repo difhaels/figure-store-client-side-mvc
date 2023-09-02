@@ -21,4 +21,12 @@ class Admin_model
         $this->db->bind('password', $password);
         return $this->db->single();
     }
+
+    // ambil semua item di database
+    public function getAllAdmin()
+    {
+        $query = 'SELECT * FROM ' . $this->table;
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
 }

@@ -45,7 +45,7 @@
     <div class="items" id="items">
         <table>
             <thead>
-                <tr>
+                <tr class="bg-slate-300 text-slate-600">
                     <td class="border border-slate-600 p-1">No</td>
                     <td class="border border-slate-600 p-1">image</td>
                     <td class="border border-slate-600 p-1">name</td>
@@ -83,7 +83,7 @@
                         <td class="border border-slate-600 p-1">
                             <div class="flex gap-1">
                                 <a class="button-yellow" href="<?= BASEURL ?>/admin/itemUpdate/<?= $item['item_id'] ?>">update</a>
-                                <a class="button-green" href="<?= BASEURL ?>/admin/itemDelete/<?= $item['item_id'] ?>">delete</a>
+                                <a class="button-red" href="<?= BASEURL ?>/admin/itemDelete/<?= $item['item_id'] ?>">delete</a>
                             </div>
                         </td>
                     </tr>

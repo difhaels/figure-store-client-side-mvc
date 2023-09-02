@@ -39,11 +39,20 @@ class Admin extends Controller
         echo "password atau username salah";
     }
 
-    // method untuk admin
+    // method untuk admin/setting
     public function setting()
     {
-        echo "admin";
+        $data['nav'] = "back-button";
+        $data['nav-short'] = "no";
+
+        $data['admin'] = $this->model('Admin_model')->getAllAdmin();
+
+        $this->view('templates/header', $data);
+        $this->view('admin/setting', $data);
+        $this->view('templates/footer');
     }
+
+
     // method untuk item
     public function item()
     {
