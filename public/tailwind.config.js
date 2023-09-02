@@ -10,6 +10,7 @@ module.exports = {
             "../app/views/admin/index.php",
             "../app/views/admin/setting.php",
             "../app/views/admin/item.php",
+            "../app/views/admin/update.php",
             "../app/views/admin/member.php",
             "../app/views/admin/transaction.php",
 

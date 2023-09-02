@@ -64,8 +64,22 @@ class Admin extends Controller
 
     public function itemUpdate()
     {
-        $coba = $_GET;
-        var_dump($coba);
+        $data['nav'] = "back-button";
+        $data['nav-short'] = "no";
+
+        $get = $_GET;
+        $string = http_build_query($get);
+        $url = explode('%2F', $string);
+        $lastUrl = end($url);
+
+        if ($lastUrl) {
+            $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
+        }
+
+        $data['update'] = $this->model('Item_model')->getItem($id);
+        $this->view('templates/header', $data);
+        $this->view('admin/update', $data);
+        $this->view('templates/footer');
     }
 
     public function itemDelete()
