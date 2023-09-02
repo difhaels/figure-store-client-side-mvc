@@ -78,7 +78,7 @@ class Admin extends Controller
 
         $data['update'] = $this->model('Item_model')->getItem($id);
         $this->view('templates/header', $data);
-        $this->view('admin/update', $data);
+        $this->view('admin/item/update', $data);
         $this->view('templates/footer');
     }
 

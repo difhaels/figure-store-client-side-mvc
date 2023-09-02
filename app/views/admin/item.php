@@ -6,6 +6,9 @@
             <button type="submit" name="search" class="button-blue" id="search">Search</button>
         </form>
 
+        <!-- tambah -->
+        <a href="" class="button-green">Tambah Item</a>
+
         <!-- Sort -->
         <form id="sortForm" action="" method="post">
             <label for="sort" class="text-white">Sort By</label>
