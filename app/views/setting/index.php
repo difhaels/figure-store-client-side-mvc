@@ -10,7 +10,7 @@
             <h1 class="p-1 lg:p-3">Admin</h1>
         </a>
 
-        <a href="<?= BASEURL ?>/admin/item" class="w-full lg:w-80 bg-slate-200 cursor-pointer">
+        <a href="<?= BASEURL ?>/item" class="w-full lg:w-80 bg-slate-200 cursor-pointer">
             <div class="bg-sky-500 pt-20 px-1 lg:px-3 pb-1 lg:pb-3">
                 <img src="<?= BASEURL ?>/img/icon/item-a.png" alt="item" class="w-10">
             </div>

@@ -7,12 +7,13 @@ module.exports = {
             
             "../app/views/home/index.php",
 
-            "../app/views/admin/index.php",
-            "../app/views/admin/setting.php",
-            "../app/views/admin/item.php",
-            "../app/views/admin/update.php",
-            "../app/views/admin/member.php",
-            "../app/views/admin/transaction.php",
+            "../app/views/setting/index.php",
+            "../app/views/setting/admin.php",
+            "../app/views/setting/item.php",
+            "../app/views/setting/item/add.php",
+            "../app/views/setting/update.php",
+            "../app/views/setting/member.php",
+            "../app/views/setting/transaction.php",
 
             "../app/views/detail/index.php",
 
