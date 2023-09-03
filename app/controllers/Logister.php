@@ -13,7 +13,7 @@ class Logister extends Controller
 
         if (isset($_SESSION["login"])) {
             // jika sudah login akan menampilkan data user
-            $this->user();
+            $this->user($_SESSION['id-login']);
         } else {
             // jika belum login, user akan diarahkan ke tampilan login
             $this->view('logister/login');
@@ -21,25 +21,21 @@ class Logister extends Controller
         $this->view('templates/footer');
     }
 
-    public function user()
+    public function user($id)
     {
-        $this->view('logister/user');
+        $data['client'] = $this->model('Client_model')->getMember($id);
+        $this->view('logister/user', $data);
     }
 
-    // method untuk menghandle login
+    // method untuk menghandle login (method ini menerima POST)
     public function login()
     {
         // mengecek password benar atau salah, jika benar akan mengembalikan nilai
-        $data['client'] = $this->model('Client_model')->login($_POST);
+        $data['client'] = $this->model('Client_model')->login();
 
         if ($data['client']) {
             $_SESSION["login"] = true;
-            $_SESSION["username"] = $_POST["username"];
-            $_SESSION["notlp"] = $data['client']["notlp"];
-            $_SESSION["nowa"] = $data['client']["nowa"];
-            $_SESSION["address"] = $data['client']["address"];
-            $_SESSION["email"] = $data['client']["email"];
-
+            $_SESSION["id-login"] = $data['client']["id"];
             // pindah ke halaman user
             header("Location: " . BASEURL . "/logister");
             die;
