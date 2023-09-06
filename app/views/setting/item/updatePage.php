@@ -1,6 +1,6 @@
 <div class="nav-index px-10 pb-10">
     <h1>*Jangan diedit jika tidak ingin diedit</h1>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/item/update" method="post" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $data['update']["item_id"]; ?>">
         <input type="hidden" name="oldImage" value="<?= $data['update']["item_image"]; ?>">

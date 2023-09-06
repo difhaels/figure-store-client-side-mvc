@@ -21,6 +21,59 @@ class Item extends Controller
         $this->view('setting/item', $data);
     }
 
+    // method uploud gambar
+    function uploudImg($name, $folder)
+    {
+        $namaFile = $_FILES[$name]['name'];
+        $ukuranFile = $_FILES[$name]['size'];
+        $error = $_FILES[$name]['error'];
+        $tmpName = $_FILES[$name]['tmp_name'];
+
+        // cek ada gambar atau tidak (4 = tidak ada gambar yang diuploud)
+        if ($error === 4) {
+            echo "
+                    <script>
+                        alert('Uploud gambar terlebih dahulu');
+                    </script>
+                ";
+            return false;
+        }
+
+        // cek yang diup gambar bukan
+        $ekstensiGambarValid = ['png', 'jpeg', 'jpg'];
+        $ekstensiGambar = explode('.', $namaFile);
+        $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+        if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+            echo "
+                    <script>
+                        alert('Anda harus menguploud gambar');
+                    </script>
+                ";
+            return false;
+        }
+
+        // cek ukuran gambar 2mb max
+        if ($ukuranFile > 2000000) {
+            echo "
+                    <script>
+                        alert('Ukuran file terlalu besar max 2 mb');
+                    </script>
+                ";
+            return false;
+        }
+
+        $img = 'img';
+        // lolos pengecekan, 
+        // akan mengisi file img/daftar dari tambahBarang karena dia yang menjalankan function ini
+        if (move_uploaded_file($tmpName, 'img/' . $folder . '/' . $namaFile)) {
+        } else {
+            echo "gagal memindahkan file";
+        }
+
+        return $namaFile;
+    }
+
     // method untuk halaman add
     public function addPage()
     {
@@ -84,59 +137,6 @@ class Item extends Controller
         }
     }
 
-    // method uploud gambar
-    function uploudImg($name, $folder)
-    {
-        $namaFile = $_FILES[$name]['name'];
-        $ukuranFile = $_FILES[$name]['size'];
-        $error = $_FILES[$name]['error'];
-        $tmpName = $_FILES[$name]['tmp_name'];
-
-        // cek ada gambar atau tidak (4 = tidak ada gambar yang diuploud)
-        if ($error === 4) {
-            echo "
-                    <script>
-                        alert('Uploud gambar terlebih dahulu');
-                    </script>
-                ";
-            return false;
-        }
-
-        // cek yang diup gambar bukan
-        $ekstensiGambarValid = ['png', 'jpeg', 'jpg'];
-        $ekstensiGambar = explode('.', $namaFile);
-        $ekstensiGambar = strtolower(end($ekstensiGambar));
-
-        if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-            echo "
-                    <script>
-                        alert('Anda harus menguploud gambar');
-                    </script>
-                ";
-            return false;
-        }
-
-        // cek ukuran gambar 2mb max
-        if ($ukuranFile > 2000000) {
-            echo "
-                    <script>
-                        alert('Ukuran file terlalu besar max 2 mb');
-                    </script>
-                ";
-            return false;
-        }
-
-        $img = 'img';
-        // lolos pengecekan, 
-        // akan mengisi file img/daftar dari tambahBarang karena dia yang menjalankan function ini
-        if (move_uploaded_file($tmpName, 'img/' . $folder . '/' . $namaFile)) {
-        } else {
-            echo "gagal memindahkan file";
-        }
-
-        return $namaFile;
-    }
-
     public function updatePage()
     {
         $data['nav'] = "back-button";
@@ -156,6 +156,64 @@ class Item extends Controller
         $this->view('templates/header', $data);
         $this->view('setting/item/updatePage', $data);
         $this->view('templates/footer');
+    }
+
+    public function update()
+    {
+        $data['id'] = $_POST["id"];
+        $data['name'] = htmlspecialchars($_POST["name"]);
+        $data['code'] = htmlspecialchars($_POST["code"]);
+        $data['stock'] = htmlspecialchars($_POST["stock"]);
+        $data['price'] = htmlspecialchars($_POST["price"]);
+        $data['type'] = htmlspecialchars($_POST["type"]);
+        $data['source'] = htmlspecialchars($_POST["source"]);
+        $data['dimensions'] = htmlspecialchars($_POST["dimensions"]);
+        $data['material'] = htmlspecialchars($_POST["material"]);
+
+        $oldImage = $_POST["oldImage"];
+        $oldImage1 = $_POST["oldImage1"];
+        $oldImage2 = $_POST["oldImage2"];
+        $oldImage3 = $_POST["oldImage3"];
+        $oldImage4 = $_POST["oldImage4"];
+
+        // cek apakah user pilih gambar baru atau tidak
+        if ($_FILES['image']['error'] === 4) {
+            $data['image'] = $oldImage;
+        } else {
+            $data['image'] = $this->uploudImg('image', 'item');
+        }
+
+        if ($_FILES['image1']['error'] === 4) {
+            $data['image1'] = $oldImage1;
+        } else {
+            $data['image1'] = $this->uploudImg('image1', 'sub');
+        }
+
+        if ($_FILES['image2']['error'] === 4) {
+            $data['image2'] = $oldImage2;
+        } else {
+            $data['image2'] = $this->uploudImg('image2', 'sub');
+        }
+
+        if ($_FILES['image3']['error'] === 4) {
+            $data['image3'] = $oldImage3;
+        } else {
+            $data['image3'] = $this->uploudImg('image3', 'sub');
+        }
+
+        if ($_FILES['image4']['error'] === 4) {
+            $data['image4'] = $oldImage4;
+        } else {
+            $data['image4'] = $this->uploudImg('image4', 'sub');
+        }
+
+        if ($this->model('Item_model')->update($data) > 0) {
+            // pindah ke dashboard admin setting
+            header("Location: " . BASEURL . "/item");
+            die;
+        } else {
+            echo "gagal update";
+        }
     }
 
     public function delete()

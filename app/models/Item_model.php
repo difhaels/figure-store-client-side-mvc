@@ -71,6 +71,32 @@ class Item_model
         return $this->db->rowCount();
     }
 
+    // update item 
+    public function update($data)
+    {
+        $id = $data["id"];
+        $id = $data["id"];
+        $name = htmlspecialchars($data['name']);
+        $code = htmlspecialchars($data['code']);
+        $stock = htmlspecialchars($data["stock"]);
+        $price = htmlspecialchars($data["price"]);
+        $type = htmlspecialchars($data["type"]);
+        $source = htmlspecialchars($data["source"]);
+        $dimensions = htmlspecialchars($data["dimensions"]);
+        $material = htmlspecialchars($data["material"]);
+        $image = $data["image"];
+        $image1 = $data["image1"];
+        $image2 = $data["image2"];
+        $image3 = $data["image3"];
+        $image4 = $data["image4"];
+
+        $query = "UPDATE " . $this->table . " SET item_name = '$name', item_code = '$code', item_stock = '$stock', item_price = '$price', item_type = '$type', item_source = '$source', item_dimensions = '$dimensions', item_material = '$material', item_image = '$image', item_image1 = '$image1', item_image2 = '$image2', item_image3 = '$image3', item_image4 = '$image4'  WHERE item_id = '$id'";
+
+        $this->db->query($query);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
     // hapus item
     public function delete($id)
     {
