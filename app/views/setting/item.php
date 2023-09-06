@@ -82,8 +82,8 @@
                         <td class="border border-slate-600 p-1"><?= $item['item_image4'] ?></td>
                         <td class="border border-slate-600 p-1">
                             <div class="flex gap-1">
-                                <a class="button-yellow" href="<?= BASEURL ?>/admin/updatePage/<?= $item['item_id'] ?>">update</a>
-                                <a class="button-red" href="<?= BASEURL ?>/admin/delete/<?= $item['item_id'] ?>">delete</a>
+                                <a class="button-yellow" href="<?= BASEURL ?>/item/updatePage/<?= $item['item_id'] ?>">update</a>
+                                <a class="button-red" href="<?= BASEURL ?>/item/delete/<?= $item['item_id'] ?>">delete</a>
                             </div>
                         </td>
                     </tr>

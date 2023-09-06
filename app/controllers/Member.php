@@ -53,7 +53,7 @@ class Member extends Controller
         }
 
         $data['nav'] = "back-button";
-        $data['back'] = "admin";
+        $data['back'] = "home";
         $data['nav-short'] = "no";
 
         $data['member'] = $this->model('Client_model')->getMember($id);

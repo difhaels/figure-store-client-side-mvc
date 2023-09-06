@@ -70,4 +70,14 @@ class Item_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    // hapus item
+    public function delete($id)
+    {
+        $query = "DELETE FROM " . $this->table . " WHERE item_id = $id";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

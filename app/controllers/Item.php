@@ -137,7 +137,7 @@ class Item extends Controller
         return $namaFile;
     }
 
-    public function itemUpdate()
+    public function updatePage()
     {
         $data['nav'] = "back-button";
         $data['back'] = "admin";
@@ -154,13 +154,27 @@ class Item extends Controller
 
         $data['update'] = $this->model('Item_model')->getItem($id);
         $this->view('templates/header', $data);
-        $this->view('admin/item/update', $data);
+        $this->view('setting/item/updatePage', $data);
         $this->view('templates/footer');
     }
 
-    public function itemDelete()
+    public function delete()
     {
-        $coba = $_GET;
-        var_dump($coba);
+        $get = $_GET;
+        $string = http_build_query($get);
+        $url = explode('%2F', $string);
+        $lastUrl = end($url);
+
+        if ($lastUrl) {
+            $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
+        }
+
+        if ($this->model('Item_model')->delete($id) > 0) {
+            // pindah ke dashboard admin setting
+            header("Location: " . BASEURL . "/item");
+            die;
+        } else {
+            echo "gagal deletes";
+        }
     }
 }

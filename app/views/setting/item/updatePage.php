@@ -17,7 +17,7 @@
                 <h1>NEW VALUE (INPUT HERE)</h1>
             </div>
 
-            <div class="border-2 border-black text-center w-[200px]">
+            <div class="border-2 border-black text-center w-[s200px]">
                 <h1 class="bg-[#E7230D] text-white">Name</h1>
                 <h1 class="bg-purple-500 text-white"><?= $data['update']["item_name"]; ?></h1>
                 <input type="text" name="name" id="name" required value="<?= $data['update']["item_name"]; ?>" class="w-[80%]">
