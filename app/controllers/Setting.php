@@ -6,8 +6,7 @@ class Setting extends Controller
     {
         // cek dulu admin sudah login atau belum
         if (isset($_SESSION['login-admin'])) {
-            $data['nav'] = "back-button";
-            $data['back'] = "home";
+            $data['nav'] = "";
             $data['nav-short'] = "no";
             $this->view('templates/header', $data);
             $this->view('setting/index');
@@ -21,8 +20,7 @@ class Setting extends Controller
     // method untuk tampilan login admin
     public function loginAdmin()
     {
-        $data['nav'] = "back-button";
-        $data['back'] = "admin";
+        $data['nav'] = "";
         $data['nav-short'] = "yes";
         $this->view('templates/header', $data);
         $this->view('setting/login', $data);
@@ -63,8 +61,7 @@ class Setting extends Controller
 
     public function itemUpdate()
     {
-        $data['nav'] = "back-button";
-        $data['back'] = "admin";
+        $data['nav'] = "";
         $data['nav-short'] = "no";
 
         $get = $_GET;

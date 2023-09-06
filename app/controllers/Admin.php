@@ -4,8 +4,7 @@ class Admin extends Controller
     // method untuk admin/setting
     public function index()
     {
-        $data['nav'] = "back-button";
-        $data['back'] = "admin";
+        $data['nav'] = "setting";
         $data['nav-short'] = "no";
 
         $data['admin'] = $this->model('Admin_model')->getAllAdmin();
@@ -60,8 +59,7 @@ class Admin extends Controller
             $id = $lastUrl; // jika last url ada maka id akan menggunakan last url
         }
 
-        $data['nav'] = "back-button";
-        $data['back'] = "admin";
+        $data['nav'] = "admin";
         $data['nav-short'] = "no";
 
         $data['admin'] = $this->model('Admin_model')->getAdmin($id);

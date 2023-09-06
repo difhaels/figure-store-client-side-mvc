@@ -5,8 +5,7 @@ class Detail extends Controller
     // id 1 dijadikan default (sepertinya bukan cara terbaik)
     public function index($id = 1)
     {
-        $data['nav'] = "back-button";
-        $data['back'] = "home";
+        $data['nav'] = "";
         $data['nav-short'] = "yes";
 
         $get = $_GET;

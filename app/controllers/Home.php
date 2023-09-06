@@ -6,7 +6,7 @@ class Home extends Controller
     // default dari App
     public function index()
     {
-        $data['nav'] = "default";
+        $data['nav'] = "no";
         $data['nav-short'] = "yes";
 
         $data['default'] = $this->model('Item_model')->getAllItem(); // untuk default

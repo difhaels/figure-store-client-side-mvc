@@ -11,7 +11,7 @@ module.exports = {
             "../app/views/setting/admin.php",
             "../app/views/setting/item.php",
             "../app/views/setting/item/addPage.php",
-            "../app/views/setting/item/update.php",
+            "../app/views/setting/item/updatePage.php",
             "../app/views/setting/update.php",
             "../app/views/setting/member.php",
             "../app/views/setting/transaction.php",
