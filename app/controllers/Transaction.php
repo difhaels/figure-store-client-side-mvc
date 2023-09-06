@@ -24,7 +24,7 @@ class Transaction extends Controller
     {
         // cek udah login apa belum
         if (isset($_SESSION['login'])) {
-            $data['nav'] = "back-button";
+            $data['nav'] = "";
             $data['nav-short'] = "yes";
 
             // jika sudah login jalankan getAllInfo untuk menangkap semua proses transaksi
@@ -43,10 +43,21 @@ class Transaction extends Controller
     // method untuk handle transaction
     public function process()
     {
-        if ($this->model('Transaction_model')->transaction($_POST) > 0) {
+
+        $data['username'] = htmlspecialchars($_POST["username"]);
+        $data['notlp'] = htmlspecialchars($_POST["notlp"]);
+        $data['address'] = htmlspecialchars($_POST["address"]);
+        $data['item_image'] = htmlspecialchars($_POST["item_image"]);
+        $data['item_name'] = htmlspecialchars($_POST["item_name"]);
+        $data['item_price'] = htmlspecialchars($_POST["item_price"]);
+        $data['transaction_name'] = htmlspecialchars($_POST["transaction_name"]);
+        $data['transaction_notlp'] = htmlspecialchars($_POST["transaction_notlp"]);
+        $data['transaction_address'] = htmlspecialchars($_POST["transaction_address"]);
+        $data['transaction_info'] = $this->uploudImg("transaction_info", "transaction");
+
+
+        if ($this->model('Transaction_model')->transaction($data) > 0) {
             header("Location: " . BASEURL . "/transaction/info");
-        } else {
-            header("Location: " . BASEURL);
         }
     }
 }

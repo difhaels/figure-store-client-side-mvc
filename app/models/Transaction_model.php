@@ -10,7 +10,7 @@ class Transaction_model
         $this->db = new Database;
     }
 
-    // method untuk menampikan semua transaksi yang sesuai dengan username
+    // method untuk menampikan semua transaksi yang sesuai dengan username (untuk transaction/info)
     public function getAllInfo()
     {
         $username = $_SESSION['username'];
@@ -43,8 +43,9 @@ class Transaction_model
             $transaction_address = $data["address"];
         }
         $stat = "menunggu konfirmasi!";
+        $transaction_info = $data['transaction_info'];
 
-        $query = "INSERT INTO " . $this->table . " (username, transaction_name, transaction_notlp, transaction_address, item_name, item_image, item_price, status, transaction_info) VALUES ('$username', '$transaction_name', '$transaction_notlp', '$transaction_address', '$item_name', '$item_image', '$item_price', '$stat', 'null')";
+        $query = "INSERT INTO " . $this->table . " (username, transaction_name, transaction_notlp, transaction_address, item_name, item_image, item_price, status, transaction_info) VALUES ('$username', '$transaction_name', '$transaction_notlp', '$transaction_address', '$item_name', '$item_image', '$item_price', '$stat', '$transaction_info')";
 
         $this->db->query($query);
 
