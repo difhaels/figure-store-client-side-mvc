@@ -1,0 +1,9 @@
+Pengertian penamaan item
+
+contoh:
+kita memiliki figure Rem dengan type Nendoroid, maka nama file difolder itemnya adalah RN1.
+
+RN1 = artinya Rem Nendoroid ke 1
+maka jika dia memiliki foto lain/sub akan menjadi RN11 s/d RN14 dan disimpan difolder sub
+
+jika ada figure lain yang memiliki nama dan type yang sama maka menjadi RN2

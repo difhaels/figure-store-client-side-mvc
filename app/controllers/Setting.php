@@ -7,6 +7,7 @@ class Setting extends Controller
         // cek dulu admin sudah login atau belum
         if (isset($_SESSION['login-admin'])) {
             $data['nav'] = "back-button";
+            $data['back'] = "home";
             $data['nav-short'] = "no";
             $this->view('templates/header', $data);
             $this->view('setting/index');
@@ -21,6 +22,7 @@ class Setting extends Controller
     public function loginAdmin()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "yes";
         $this->view('templates/header', $data);
         $this->view('setting/login', $data);
@@ -44,7 +46,8 @@ class Setting extends Controller
     public function item()
     {
         $data['nav'] = "back-button";
-        $data['nav-short'] = "yes";
+        $data['back'] = "admin";
+        $data['nav-short'] = "no";
 
         $data['items'] = $this->model('Item_model')->getAllItem(); // untuk default
 
@@ -61,6 +64,7 @@ class Setting extends Controller
     public function itemUpdate()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "no";
 
         $get = $_GET;

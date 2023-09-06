@@ -6,6 +6,7 @@ class Detail extends Controller
     public function index($id = 1)
     {
         $data['nav'] = "back-button";
+        $data['back'] = "home";
         $data['nav-short'] = "yes";
 
         $get = $_GET;

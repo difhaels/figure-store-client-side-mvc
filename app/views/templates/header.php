@@ -12,12 +12,16 @@
     <nav>
         <div class="nav-tittle-flex-1">
             <?php if ($data['nav'] == "back-button") : ?>
-                <a href="<?= BASEURL ?>">
-                    <img src="<?= BASEURL ?>/img/icon/back.png" alt="back" class="nav-a">
-                </a>
-            <?php else : ?>
-                <h1 class="nav-tittle">FIGURE STORE</h1>
-            <?php endif; ?>
+                <?php if ($data['back'] == "admin") : ?>
+                    <a href="<?= BASEURL ?>/setting">
+                    <?php else : ?>
+                        <a href="<?= BASEURL ?>">
+                        <?php endif; ?>
+                        <img src="<?= BASEURL ?>/img/icon/back.png" alt="back" class="nav-a">
+                        </a>
+                    <?php else : ?>
+                        <h1 class="nav-tittle">FIGURE STORE</h1>
+                    <?php endif; ?>
         </div>
         <div class="nav-tittle-flex-2">
             <?php if ($data['nav-short'] == "yes") : ?>

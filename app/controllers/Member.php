@@ -6,6 +6,7 @@ class Member extends Controller
     public function index()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "no";
 
         if (isset($_POST['search'])) { // menggunakan isset karena post seacrh belum terbaca diawal
@@ -52,6 +53,7 @@ class Member extends Controller
         }
 
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "no";
 
         $data['member'] = $this->model('Client_model')->getMember($id);

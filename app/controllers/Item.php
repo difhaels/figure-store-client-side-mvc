@@ -6,6 +6,7 @@ class Item extends Controller
     public function index()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "yes";
 
         $data['items'] = $this->model('Item_model')->getAllItem(); // untuk default
@@ -24,6 +25,7 @@ class Item extends Controller
     public function addPage()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "yes";
 
         $this->view('templates/header', $data);
@@ -138,6 +140,7 @@ class Item extends Controller
     public function itemUpdate()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "no";
 
         $get = $_GET;

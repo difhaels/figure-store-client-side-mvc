@@ -5,6 +5,7 @@ class Admin extends Controller
     public function index()
     {
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "no";
 
         $data['admin'] = $this->model('Admin_model')->getAllAdmin();
@@ -60,6 +61,7 @@ class Admin extends Controller
         }
 
         $data['nav'] = "back-button";
+        $data['back'] = "admin";
         $data['nav-short'] = "no";
 
         $data['admin'] = $this->model('Admin_model')->getAdmin($id);
